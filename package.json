@@ -1,0 +1,19 @@
+{
+  "name": "zeo_task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheshyrski/Zeoalliance_task.git"
+  },
+  "author": "cheshyrski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cheshyrski/Zeoalliance_task/issues"
+  },
+  "homepage": "https://github.com/cheshyrski/Zeoalliance_task#readme"
+}

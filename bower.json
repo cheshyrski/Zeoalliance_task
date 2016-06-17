@@ -1,0 +1,17 @@
+{
+  "name": "zeo_task",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "cheshyrski"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
