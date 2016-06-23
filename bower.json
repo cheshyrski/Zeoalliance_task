@@ -13,5 +13,11 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "normalize-css": "normalize.css#^4.1.1",
+    "angular-sanitize": "^1.5.7"
+  }
 }

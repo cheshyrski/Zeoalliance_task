@@ -1,0 +1,139 @@
+@import '../utils/variables';
+
+/* Clearfix div */
+.clearfix {
+	clear: both;
+}
+
+/* One step to clean your Mac block */
+
+.macclean-block_left__step {
+    color: #414141;
+    width: 100%;
+    height: 71px;
+    position: relative;
+    border: 1px solid #dde3e7;
+    margin: 16px 0;
+    font-size: 18px;
+    &-icon {
+        position: absolute;
+        top: 22px;
+        left: 17px;
+    }
+    &-step {
+        margin-left: 68px;
+        line-height: 70px;
+        text-transform: uppercase;
+        fnt-weight: 600;
+    }
+    &-description {
+        margin-left: 19px;
+        a {
+            color: $color-href;
+            text-decoration: none;
+            border-bottom: 0.1px solid $color-href;
+        }
+    }
+}
+
+/* Download button */
+
+.bttn {
+	display: inline-block;
+    width: 388px;
+    &-download {
+        position: relative;
+        margin-top: 20px;
+        padding-left: 0;
+        height: 81px;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 81px;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: $color-href;
+        border-color: transparent;
+        border-radius: 6px;
+        
+        span {
+            margin-left: -25px;
+        }
+        img {
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            width: 42px;
+        }
+    }
+    &-href {
+		text-align: center;
+		margin-top: 11px;
+        a {
+            font-size: 14px;
+            color: $color-href;
+        }
+    }
+}
+
+/* Hexagon */
+.hexagon {
+  position: relative;
+  width: 94px; 
+  height: 54.85px;
+  margin: 20px 0;
+  text-align: center;
+  background-color: #fff;
+  
+  border-left: solid 0.5px #c0c0c0;
+  border-right: solid 0.5px #c0c0c0;
+  &-img {
+  	position: relative;
+  	width: 60px;
+	z-index: 10;
+  }
+}
+
+.hexTop,
+.hexBottom {
+  position: absolute;
+  /*z-index: 1;*/
+  width: 67.18px;
+  height: 67.18px;
+  overflow: hidden;
+  transform: scaleY(0.5774) rotate(-45deg);
+  background: inherit;
+  left: 13.41px;
+}
+
+.hexTop {
+  top: -33.5876px;
+  border-top: solid 0.7071px #c0c0c0;
+  border-right: solid 0.7071px #c0c0c0;
+}
+
+.hexBottom {
+  bottom: -33.5876px;
+  border-bottom: solid 0.7071px #c0c0c0;
+  border-left: solid 0.7071px #c0c0c0;
+}
+
+.hexagon:after {
+  content: "";
+  position: absolute;
+  top: 0.2887px;
+  left: 0;
+  width: 94.0000px;
+  height: 54.2709px;
+  z-index: 2;
+  background: inherit;
+}
+
+/* Toggle space between rows in feature description */
+.descript-normal {
+	line-height: 24px;
+}
+
+.descript-reduced {
+	line-height: 16px;
+}

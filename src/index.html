@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html data-ng-app="zeo-app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="app/main-page/images/messengers-logo_black.png">
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="css/vendor.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- JavaScript -->
+    <script type="text/javascript" src="js/vendor.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-wrap">
+            <img class="header-wrap_mk-logo" src="images/logos/mac-keeper_logo.png" alt="MacKeeper logo">
+            <img class="header-wrap_rounded-rect" src="images/rounded_rect.png">
+            <h2>3 easy steps to clean your mac!</h2>
+        </div>
+    </header>
+    <main data-ng-controller="ZeoAppController">
+        <div class="macclean-block">
+            <div class="macclean-block_left">
+                <div class="macclean-block_left__step" data-ng-repeat="step in steps">
+                    <img class="macclean-block_left__step-icon" data-ng-src="{{step.icon_src}}">
+                    <span class="macclean-block_left__step-step">Step {{step.step_number}}:</span> <span class="macclean-block_left__step-description" ng-bind-html="step.step_description"> {{step.step_description}}</span>
+                </div>
+                <div class="bttn">
+                    <button type="button" class="bttn-download"><span>Download now</span><img src="images/icons/download-icon.png"></button>
+                    <p class="bttn-href">
+                        <a href="#">or Click here to download</a>
+                    </p>
+                </div>
+            </div>
+            <div class="macclean-block_right">
+                <img class="macclean-block_right-screen" src="images/mac-clean.png" alt="Mac cleans itself">
+                <div class="macclean-block_right-badges">
+                    <img src="images/downloads.png" alt="dowloads this week">
+                    <img src="images/rating.png" alt="rating">
+                </div>
+            </div>
+        </div>
+        <div class="clearfix "></div>
+        <div class="logos">
+            <div class="logos-row">
+                <div><img src="images/logos/cnn_logo.png"></div>
+                <div><img src="images/logos/Dezzain_logo-grey.png"></div>
+                <div><img src="images/logos/Forbes_logo.png"></div>
+                <div><img src="images/logos/machmachines_logo.png"></div>
+            </div>
+        </div>
+        <div class="features-block">
+            <div class="features-block_head">
+                <span>What we have to keep your Mac &#32 <a href="#">clean and safe</a></span>
+            </div>
+            <div class="features-block_features">
+                <div class="features-block_features-hexs">
+                    <div class="features-block_features-hexs-1">
+                        <div class="hexagon" data-ng-repeat="feature in features | orderBy:'id' | limitTo : 6">
+                            <div class="hexTop"></div>
+                            <div class="hexBottom"></div>
+                            <img class="hexagon-img" data-ng-src="{{feature.feature_src}}" data-ng-click="getFeature(feature)">
+                        </div>
+                    </div>
+                    <div class="features-block_features-hexs-2">
+                        <div class="hexagon" data-ng-repeat="feature in features | orderBy:'id' | limitTo : 5 : 6">
+                            <div class="hexTop"></div>
+                            <div class="hexBottom"></div>
+                            <img class="hexagon-img" data-ng-src="{{feature.feature_src}}" data-ng-click="getFeature(feature)">
+                        </div>
+                    </div>
+                    <div class="features-block_features-hexs-3">
+                        <div class="hexagon" data-ng-repeat="feature in features | orderBy:'id' | limitTo : 6 : 11">
+                            <div class="hexTop"></div>
+                            <div class="hexBottom"></div>
+                            <img class="hexagon-img" data-ng-src="{{feature.feature_src}}" data-ng-click="getFeature(feature)">
+                        </div>
+                    </div>
+                </div>
+                <div class="features-block_view">
+                    <div class="features-block_view-icon">
+                        <img class="features-block_view-icon--img" data-ng-src="{{currentSrc}}">
+                        <h4>{{currentTitle | uppercase}}</h4>
+                    </div>
+                    <div class="features-block_view-description">
+                        <div class="features-block_view-description--text descript-{{currentTitle == 'Fast cleanup' ? 'reduced' : 'normal'}}">{{currentDescription}}</div>
+                        <button type="button" class="features-block_view-description--btn">Dowload Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="review-block">
+            <div class="review-block_head">
+                <span>Checkout Some Reviews from our Users</span>
+            </div>
+            <div class="review-block_row">
+                <div class="review-block_row-review" data-ng-repeat="review in reviews">
+                    <div class="review-block_row-review--content">
+                        <img src="images/icons/star.png">
+                        <img src="images/icons/star.png">
+                        <img src="images/icons/star.png">
+                        <img src="images/icons/star.png">
+                        <img src="images/icons/star.png">
+                        <p ng-bind-html="review.content">{{review.content}}</p>
+                    </div>
+                    <div class="review-block_row-review--author">
+                        <p>
+                            <b class="author-name">Michael T</b>
+                            <br> Oxfordshire, United Kingdom,
+                            <br> 12 May 2016
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="download-block">
+            <div class="download-block_row">
+                <div class="download-block_row--img1">
+                    <img src="images/n1_system.png">
+                </div>
+                <div class="bttn bttn-down">
+                    <button type="button" class="bttn-download"><span>Download now</span><img src="images/icons/download-icon.png"></button>
+                    <p class="bttn-href">
+                        <a href="#">or Click here to download</a>
+                    </p>
+                </div>
+                <div class="download-block_row--img2">
+                    <img src="images/map.png">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="foot-top">
+            <div class="foot-top_menu">
+                <div class="foot-top_menu-wrap">
+                    <span>App</span>
+                    <span>Privacy policy</span>
+                    <span>Company</span>
+                    <span>EULA</span>
+                    <span>Support</span>
+                    <span>Uinstall</span>
+                </div>
+            </div>
+        </div>
+        <div class="foot-bottom">
+            <div class="foot-bottom_content">
+            <div class="foot-bottom_content-inner">
+                <p class="foot-bottom_content-inner--notes">
+                    *According to our Internal statistics
+                    <br> ** This statement is solely our subjective opinion and is used purely for advertising and promotional purposes.
+                    <br> You may be presented with an optional offer(s) during installation l<a href="#">earn more</a>&#32<span>></span>
+                </p>
+                <p class="foot-bottom_content-inner--copyright">
+                    Copyright © 2016 Kromtech Alliance Corp. All rights reserved.
+                </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
