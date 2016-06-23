@@ -103,19 +103,7 @@ gulp.task('app.js', function() {
             'src/common/**/*.service.js',
             'src/common/**/*.controller.js'
         ])
-        .pipe(ngAnnotate());
-
-    var templates = gulp.src('src/common/**/*.tpl.html')
-        .pipe(minifyHtml({
-            removeComments: true,
-            collapseWhitespace: true,
-            collapseInlineTagWhitespace: true
-        }))
-        .pipe(ngHtml2Js({
-            moduleName: 'zeo-task.templates'
-        }));
-
-    return merge2(js, templates)
+        .pipe(ngAnnotate())
         .pipe(concat('app.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
